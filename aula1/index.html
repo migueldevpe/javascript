@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(10, 1, 26);
+            color: white;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(0, 136, 255);
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Olá, Aluno!</h1>
+    <p>Resultado</p> 
+    <span>Clique aqui</span> -->
+
+    <h1>Somando</h1>
+    <input type="number" name="n1" id="n1">
+    <input type="number" name="n2" id="n2">
+    <button onclick="somar()">Somar</button>
+    <p id="res">Resultado</p>
+
+    <br>
+
+    <h1>Veja as funções no quadrado</h1>
+    <span>Mouse</span>
+    <script>
+
+        var click = window.document.getElementsByTagName('span')[0];
+        click.addEventListener('click', cliquei)
+        click.addEventListener('mouseenter', entrou)
+        click.addEventListener('mouseout', saiu)
+
+        function cliquei() {
+            click.innerText = `Clicou`
+            click.style.background = `gold`
+        }
+
+        function entrou() {
+            click.innerText = `Entrou`
+            click.style.background = `green`
+        }
+
+        function saiu() {
+            click.innerText = `Saiu`
+            click.style.background = `red`
+        }
+
+
+        function somar() {
+
+            var in1 = window.document.getElementById('n1');
+            var in2 = window.document.getElementById('n2');
+            var res = window.document.querySelector('p#res');
+            
+            let n1 = Number(in1.value);
+            let n2 = Number(in2.value);
+
+            var soma = n1 + n2;
+
+            res.innerHTML = `<p>Veja aqui o seu resultado: <br> ${soma}</p>`
+
+        }
+
+    </script>
+</body>
+</html>

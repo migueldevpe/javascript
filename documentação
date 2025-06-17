@@ -1,0 +1,114 @@
+/* <h1>Somando</h1>
+            <input type="number" name="n1" id="n1">
+            <input type="number" name="n2" id="n2">
+            <button onclick="somar()">Somar</button>
+            <p id="res">Resultado</p>
+
+            <br>
+
+            <h1>Veja as funções no quadrado</h1>
+            <span>Mouse</span>
+            <script>
+
+                var click = window.document.getElementsByTagName('span')[0];
+                click.addEventListener('click', cliquei)
+                click.addEventListener('mouseenter', entrou)
+                click.addEventListener('mouseout', saiu)
+
+                function cliquei() {
+                    click.innerText = `Clicou`
+                    click.style.background = `gold`
+                }
+
+                function entrou() {
+                    click.innerText = `Entrou`
+                    click.style.background = `green`
+                }
+
+                function saiu() {
+                    click.innerText = `Saiu`
+                    click.style.background = `red`
+                }
+
+
+                function somar() {
+
+                    var in1 = window.document.getElementById('n1');
+                    var in2 = window.document.getElementById('n2');
+                    var res = window.document.querySelector('p#res');
+                    
+                    let n1 = Number(in1.value);
+                    let n2 = Number(in2.value);
+
+                    var soma = n1 + n2;
+
+                    res.innerHTML = `<p>Veja aqui o seu resultado: <br> ${soma}</p>`
+
+
+                }
+
+            </script>
+
+        var nome = window.prompt('Informe o seu nome.');
+        var idade = Number(window.prompt('Informe a sua idade.'));
+
+        if (idade >= 18) {
+
+            window.alert(`Olá, ${nome}! Você tem ${idade} anos. Clique em "Ok" para continuar.`);
+            window.alert(`${nome}, vamos fazer um teste básico de soma, caso queira fazer, clique em "Ok". O resultado será exibido na página.`);
+
+            var n1 = Number(window.prompt('Informe o primeiro número da operação.'));
+            var n2 = Number(window.prompt('Informe o segundo número da operação.'));
+            var soma = n1 + n2
+
+            document.writeln(`<p style="color: white;">Aqui está o resultado da soma: ${soma}.</p>`);
+
+        } else {
+
+            window.alert('Você não pode continuar por ser menor de idade.');
+
+        } 
+
+        var nome = String(window.prompt('Olá, querido aluno. Para saber a sua nota final, digite o seu nome.'));
+
+        if (nome === undefined) {
+
+            window.alert('Insira um nome. Recarregue a página.');
+
+        } else {
+
+            var nota1 = Number(window.prompt(`Oi, ${nome.toUpperCase()}, agora digite a sua nota do primeiro período.`));
+            var nota2 = Number(window.prompt(`Nota do primeiro período: ${nota1}, agora informe a nota do segundo período.`));
+            var nota3 = Number(window.prompt(`Nota do primeiro e segundo período: ${nota1} e ${nota2}. agora informe a nota do segundo período.`));
+            window.alert(`Nota do primeiro, segundo e terceiro período: ${nota1}, ${nota2} e ${nota3}. Clique em "Ok" para ver o resultado.`);
+
+            var media = (nota1 + nota2 + nota3) / 3
+
+            if (media >= 7) {
+
+                window.alert(`Sua média foi: ${media.toFixed(2)}. Parabéns, ${nome}! Você passou.`);
+                document.writeln(`<p style="color: white;">${nome}, agora que você passou, mostre para os seus amigos.</p>`);
+
+            } else {
+
+                window.alert(`Sua média foi: ${media.toFixed(2)}. Não foi dessa vez, ${nome}. :(`);
+                document.writeln(`<p style="color: white;">${nome}, veja aqui os assuntos da recuperação.</p>`);
+
+            }
+
+        }
+
+        */
+
+        /*    var nome = window.prompt('Informe o seu nome.');
+        var idade = Number(window.prompt('Informe a sua idade.'));
+        var local = window.prompt('Informe o seu endereço.');
+        
+        if (idade >= 18) {
+            window.confirm(`Olá, ${nome}! Você tem ${idade} anos e o endereço informado é ${local}. Correto?`);
+            document.write(`<p style="color: white;">Nome: ${nome.toUpperCase()}</p>`);
+            document.writeln(`<p style="color: white;">Idade: ${idade.toUpperCase()}</p>`);
+            document.writeln(`<p style="color: white;">Endereço: ${local.toUpperCase()}</p>`);
+        } else {
+            window.alert('Você é menor de idade.');
+        } */
