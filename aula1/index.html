@@ -25,7 +25,7 @@
     <p>Resultado</p> 
     <span>Clique aqui</span> -->
 
-    <h1>Somando</h1>
+    <!-- <h1>Somando</h1>
     <input type="number" name="n1" id="n1">
     <input type="number" name="n2" id="n2">
     <button onclick="somar()">Somar</button>
@@ -35,42 +35,32 @@
 
     <h1>Veja as funções no quadrado</h1>
     <span>Mouse</span>
+
+    <br>
+
+    <h1>Informe a sua idade</h1>
+    <input type="number" name="idade" id="idade">
+    <button>Verificar</button>
+    <p>Informação</p> -->
+
+    <h1>Informe a sua velocidade</h1>
+    <p>Velocidade - <input type="number" name="vel" id="vel"> <input type="button" value="verificar"></p>
+    <p>Informação</p>
     <script>
 
-        var click = window.document.getElementsByTagName('span')[0];
-        click.addEventListener('click', cliquei)
-        click.addEventListener('mouseenter', entrou)
-        click.addEventListener('mouseout', saiu)
+        var button = window.document.getElementsByTagName('input')[1];
+        button.addEventListener('click', verificar)
 
-        function cliquei() {
-            click.innerText = `Clicou`
-            click.style.background = `gold`
-        }
-
-        function entrou() {
-            click.innerText = `Entrou`
-            click.style.background = `green`
-        }
-
-        function saiu() {
-            click.innerText = `Saiu`
-            click.style.background = `red`
-        }
-
-
-        function somar() {
-
-            var in1 = window.document.getElementById('n1');
-            var in2 = window.document.getElementById('n2');
-            var res = window.document.querySelector('p#res');
+        function verificar() {
+            var ivel = window.document.getElementById('vel');
+            var informar = window.document.getElementsByTagName('p')[1];
+            var vel = Number(ivel.value);
             
-            let n1 = Number(in1.value);
-            let n2 = Number(in2.value);
-
-            var soma = n1 + n2;
-
-            res.innerHTML = `<p>Veja aqui o seu resultado: <br> ${soma}</p>`
-
+            if (vel > 60) {
+                informar.innerHTML = `<p>Velocidade: ${vel}km/h <br> Você está acima do limite. MULTADO!</p>`;
+            } else {
+                informar.innerText = 'Liberado';
+            }
         }
 
     </script>

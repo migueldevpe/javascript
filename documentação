@@ -1,3 +1,58 @@
+    //    var verify = window.document.getElementsByTagName('button')[1];
+
+    //     verify.addEventListener('click', verificar)
+
+    //     function verificar() {
+    //         var tidade = window.document.getElementById('idade');
+    //         var resultado = window.document.getElementsByTagName('p')[1];
+    //         var idade = Number(tidade.value);
+
+    //         if (idade >= 18) {
+    //             resultado.innerText = `Você é maior de 18 anos, você tem ${idade} anos.`
+    //         } else {
+    //             resultado.innerText = `Você é menor de idade.`
+    //         }
+    //     }
+
+
+    //     var click = window.document.getElementsByTagName('span')[0];
+    //     click.addEventListener('click', cliquei)
+    //     click.addEventListener('mouseenter', entrou)
+    //     click.addEventListener('mouseout', saiu)
+
+    //     function cliquei() {
+    //         click.innerText = `Clicou`
+    //         click.style.background = `gold`
+    //     }
+
+    //     function entrou() {
+    //         click.innerText = `Entrou`
+    //         click.style.background = `green`
+    //     }
+
+    //     function saiu() {
+    //         click.innerText = `Saiu`
+    //         click.style.background = `red`
+    //     }
+
+
+    //     function somar() {
+
+    //         var in1 = window.document.getElementById('n1');
+    //         var in2 = window.document.getElementById('n2');
+    //         var res = window.document.querySelector('p#res');
+            
+    //         let n1 = Number(in1.value);
+    //         let n2 = Number(in2.value);
+
+    //         var soma = n1 + n2;
+
+    //         res.innerHTML = `<p>Veja aqui o seu resultado: <br> ${soma}</p>`
+
+    //     }
+
+        
+
 /* <h1>Somando</h1>
             <input type="number" name="n1" id="n1">
             <input type="number" name="n2" id="n2">
