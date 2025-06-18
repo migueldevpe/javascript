@@ -48,18 +48,19 @@
     <p>Informação</p>
     <script>
 
-        var button = window.document.getElementsByTagName('input')[1];
-        button.addEventListener('click', verificar)
+        var botão = window.document.getElementsByTagName('input')[1];
+        botão.addEventListener('click', radar);
 
-        function verificar() {
-            var ivel = window.document.getElementById('vel');
+        function radar() {
+            var txtvel = window.document.getElementById('vel');
             var informar = window.document.getElementsByTagName('p')[1];
-            var vel = Number(ivel.value);
-            
+
+            var vel = Number(txtvel.value);
+
             if (vel > 60) {
-                informar.innerHTML = `<p>Velocidade: ${vel}km/h <br> Você está acima do limite. MULTADO!</p>`;
+                informar.innerHTML = `Você estava acima de 60km/h. Multado! <br> ${vel}km/h.`
             } else {
-                informar.innerText = 'Liberado';
+                informar.innerText = 'Liberado.'
             }
         }
 
