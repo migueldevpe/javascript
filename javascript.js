@@ -114,25 +114,25 @@ switch(mês) {
 
 switch(dia) {
     case 0:
-        console.log(`Tenha um ótimo Domingo. ${nDia}`);
+        console.log(`Tenha um ótimo Domingo. ${nDia} de ${mês}, ${ano}.`);
         break
     case 1:
-        console.log('Tenha uma ótima Segunda-Feira.');
+        console.log(`Tenha uma ótima Segunda-Feira. ${nDia} de ${mês}, ${ano}.`);
         break
     case 2:
-        console.log('Tenha uma ótima Terça-Feira.');
+        console.log(`Tenha uma ótima Terça-Feira. ${nDia} de ${mês}, ${ano}.`);
         break
     case 3:
         console.log(`Tenha uma ótima Quarta-Feira. ${nDia} de ${mês}, ${ano}.`);
         break
     case 4:
-        console.log('Tenha uma ótima Quinta-Feira.');
+        console.log(`Tenha uma ótima Quinta-Feira. ${nDia} de ${mês}, ${ano}.`);
         break
     case 5:
-        console.log('Tenha uma ótima Sexta-Feira.');
+        console.log(`Tenha uma ótima Sexta-Feira. ${nDia} de ${mês}, ${ano}.`);
         break
     case 6:
-        console.log('Tenha um ótimo Sábado.');
+        console.log(`Tenha um ótimo Sábado. ${nDia} de ${mês}, ${ano}.`);
         break
     default:
         console.log('[ERRO] Dia inválido.')
