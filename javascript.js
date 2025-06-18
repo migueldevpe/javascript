@@ -45,3 +45,96 @@ if (horario >= 12 && horario < 18) {
     console.log('Bom dia!')
 } */
 
+var horaAtual = new Date();
+var hora = horaAtual.getHours();
+
+var minutoAtual = new Date();
+var minuto = minutoAtual.getMinutes();
+
+if (hora >= 6 && hora < 12) {
+    console.log(`Bom dia! São ${hora}:${minuto}.`)
+} else if (hora > 12 && hora <= 18) {
+    console.log(`Boa tarde! São ${hora}:${minuto}.`)
+} else if (hora > 18 && hora < 24) {
+    console.log(`Boa noite! São ${hora}:${minuto}.`)
+} else {
+    console.log(`Boa madrugada! São ${hora}:${minuto}.`)
+}
+
+var diaAtual = new Date();
+var dia = diaAtual.getDay();
+
+var nDiaAtual = new Date();
+var nDia = nDiaAtual.getDate();
+
+var mêsAtual = new Date();
+var mês = mêsAtual.getMonth();
+
+var anoAtual = new Date();
+var ano = anoAtual.getFullYear();
+
+switch(mês) {
+    case 0:
+        mês = 'Janeiro';
+        break
+    case 1:
+        mês = 'Fevereiro';
+        break
+    case 2:
+        mês = 'Março';
+        break
+    case 3:
+        mês = 'Abril';
+        break
+    case 4:
+        mês = 'Maio';
+        break
+    case 5:
+        mês = 'Junho';
+        break
+    case 6:
+        mês = 'Julho';
+        break
+    case 7:
+        mês = 'Agosto';
+        break
+    case 8:
+        mês = 'Setembro';
+        break
+    case 9:
+        mês = 'Outubro';
+        break
+    case 10:
+        mês = 'Novembro';
+        break
+    case 11:
+        mês = 'Dezembro';
+        break
+}
+
+switch(dia) {
+    case 0:
+        console.log(`Tenha um ótimo Domingo. ${nDia}`);
+        break
+    case 1:
+        console.log('Tenha uma ótima Segunda-Feira.');
+        break
+    case 2:
+        console.log('Tenha uma ótima Terça-Feira.');
+        break
+    case 3:
+        console.log(`Tenha uma ótima Quarta-Feira. ${nDia} de ${mês}, ${ano}.`);
+        break
+    case 4:
+        console.log('Tenha uma ótima Quinta-Feira.');
+        break
+    case 5:
+        console.log('Tenha uma ótima Sexta-Feira.');
+        break
+    case 6:
+        console.log('Tenha um ótimo Sábado.');
+        break
+    default:
+        console.log('[ERRO] Dia inválido.')
+        break
+}
