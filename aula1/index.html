@@ -44,23 +44,22 @@
     <p>Informação</p> -->
 
     <h1>Informe a sua velocidade</h1>
-    <p>Velocidade - <input type="number" name="vel" id="vel"> <input type="button" value="verificar"></p>
+    <p>Velocidade - <input type="number" name="vel" id="vel"> <input type="button" value="Verificar"></p>
     <p>Informação</p>
     <script>
 
-        var botão = window.document.getElementsByTagName('input')[1];
-        botão.addEventListener('click', radar);
+        var vbutton = window.document.getElementsByTagName('input')[1];
+        vbutton.addEventListener('click', verificou);
 
-        function radar() {
+        function verificou() {
             var txtvel = window.document.getElementById('vel');
-            var informar = window.document.getElementsByTagName('p')[1];
-
             var vel = Number(txtvel.value);
+            var information = window.document.getElementsByTagName('p')[1];
 
             if (vel > 60) {
-                informar.innerHTML = `Você estava acima de 60km/h. Multado! <br> ${vel}km/h.`
+                information.innerHTML = `Você ultrapassou de 60km/h. MULTADO! <br> Você estava a ${vel}km/h.`
             } else {
-                informar.innerText = 'Liberado.'
+                information.innerText = `Liberado.`
             }
         }
 
