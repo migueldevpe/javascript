@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exerc</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+
+        #foto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        #foto > img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificar idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento -
+                <input type="number" name="txtano" id="txtano" min="1900">
+            </p>
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sexo" id="masc" checked>
+            <label for="fem">Feminino</label>
+            <input type="radio" name="sexo" id="fem">
+        </div>
+        <div>
+            <input type="button" value="Verificar" onclick="verificou()">
+        </div>
+        <div id="foto">
+            <h2>-</h2>
+            <img id="imagem" src="https://i.pinimg.com/736x/fd/0a/78/fd0a7888a1165a085fabf22a1ac3fd41.jpg" alt="-">
+        </div>
+    </section>
+    <footer>
+        <p>Testado</p>
+    </footer>
+    <script>
+
+        function verificou() {
+            var anoAtual = new Date();
+            var ano = anoAtual.getFullYear();
+            var fullAno = window.document.getElementById('txtano');
+            var res = window.document.getElementsByTagName('h2')[0];
+
+            if (fullAno.value.length <= 0 || Number(fullAno.value) > ano) {
+                window.alert('[ERRO] Inválido. Revise e envie novamente.');
+            } else {
+                var fasex = window.document.getElementsByName('sexo');
+                var idade = ano - Number(fullAno.value)
+                var genero = ''
+
+                if (fasex[0].checked) {
+                    genero = 'HOMEM'
+                } else if (fasex[1].checked) {
+                    genero = 'MULHER'
+                }
+
+                res.innerText = `Você é ${genero} e tem ${idade} anos.`
+
+                if (idade > 0 && idade <= 10) {
+                    // criança
+                    imagem.src = 'https://media.istockphoto.com/id/1399611777/pt/foto/portrait-of-a-smiling-little-brown-haired-boy-looking-at-the-camera-happy-kid-with-good.jpg?s=612x612&w=0&k=20&c=7Jcx5NsIbyqPE2xWamyWQtuwECSox0wmoXvat3elBX8='
+                } else if (idade <= 21) {
+                    // jovem
+                    imagem.src = 'https://images.educamaisbrasil.com.br/content/noticias/5-vantagens-de-contratar-um-jovem-aprendiz-para-as-empresas_g.jpg'
+                } else if (idade <= 55) {
+                    // adulto
+                    imagem.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBY08UTFTatR7TIB0YBs845234WrUNCKBDfg&s'
+                } else {
+                    // idoso
+                    imagem.src = 'https://media.istockphoto.com/id/912073272/pt/foto/happy-senior-man-sitting-at-home.jpg?s=612x612&w=0&k=20&c=MibpEi0DRrCFJmmKdXY0dBjkp6w2BWDa-ZA-hfR_6Qs='
+                }
+
+            }
+        }
+
+    </script>
+</body>
+</html>
