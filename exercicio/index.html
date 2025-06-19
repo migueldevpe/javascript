@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>exerc</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Verificar idade</h1>
+    <header>
+        <h1>Verificar idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento <input type="number" name="ano" id="anoDeNascimento"></p>
+        </div>
+        <div>
+            <label for="sexMasc">
+                Masculino
+                <input type="radio" name="sexMasc" id="masc">
+            </label>
+            <label for="sexFem">
+                Feminino
+                <input type="radio" name="sexFem" id="fem">
+            </label>
+        </div>
+        <div>
+            <input type="button" value="Verificar">
+        </div>
+    </section>
+    <footer>
+        <p>Testado</p>
+    </footer>
+    <script>
+
+    </script>
 </body>
 </html>
