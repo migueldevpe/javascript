@@ -85,64 +85,64 @@
         <p>Testado</p>
     </footer>
     <script>
-
         function verificou() {
-            var txtano = window.document.getElementById('txtano');
+
+            var txtano = document.getElementById('txtano');
             var fano = new Date();
             var ano = fano.getFullYear();
-            var verificar = window.document.getElementsByTagName('input')[3];
-            var informar = window.document.getElementsByTagName('h2')[0];
+            var verificar = document.getElementsByTagName('input')[3];
+            var informar = document.getElementsByTagName('h2')[0];
 
             if (txtano.value.length == 0 || Number(txtano.value) > ano) {
-                window.alert('[ERRO] Inválido. Revise as informações enviadas.');
+                alert('[ERRO] Verifique as informações e mande novamente.');
             } else {
-                var osexo = window.document.getElementsByName('sexo');
+                var vsexo = document.getElementsByName('sexo');
                 var idade = ano - Number(txtano.value);
                 var genero = ''
                 var pattern = ''
 
-                if (osexo[0].checked) {
+                if (vsexo[0].checked) {
                     genero = 'HOMEM'
-                    if (idade > 0 && idade <=13) {
+                    if (idade > 0 && idade <= 10) {
                         pattern = 'CRIANÇA'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://oticadagente.com.br/wp-content/uploads/2021/11/Como-identificar-que-a-sua-crianca-precisa-usar-oculos.jpg'
                     } else if (idade < 21) {
                         pattern = 'JOVEM'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://img.freepik.com/fotos-gratis/jovem-moreno-vestindo-camiseta-branca_273609-21805.jpg?semt=ais_hybrid&w=740'
-                    } else if (idade <= 50) {
+                    } else if (idade < 50) {
                         pattern = 'ADULTO'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://thumbs.dreamstime.com/b/homem-adulto-%C3%A0-moda-que-gesticula-o-sinal-positivo-32323629.jpg'
                     } else {
                         pattern = 'IDOSO'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnJXAgu6p5a_ke8fqykUTs5PEmowf_e0POcIr2t_edb0fhtkAQLtIA8w6xrS68lSCXjQQ&usqp=CAU'
                     }
-                } else if (osexo[1].checked) {
+                } else if (vsexo[1].checked) {
                     genero = 'MULHER'
-                    if (idade > 0 && idade <=13) {
+                    if (idade > 0 && idade <= 10) {
                         pattern = 'CRIANÇA'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2r63CsaNB0jPoyDdkreAmH87-EvuC-OC3oE7xGyEVmRci-nr7Q1PHST5TUJYLcJXIwMw&usqp=CAU'
                     } else if (idade < 21) {
                         pattern = 'JOVEM'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://d1muf25xaso8hp.cloudfront.net/https://img.criativodahora.com.br/2024/02/criativo-65c62b6090e54MDkvMDIvMjAyNCAxMGg0MA==.jpg?w=1000&h=&auto=compress&dpr=1&fit=max'
-                    } else if (idade <= 50) {
+                    } else if (idade < 50) {
                         pattern = 'ADULTA'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://thumbs.dreamstime.com/b/mulher-adulta-feliz-que-sorri-em-voc%C3%AA-43811922.jpg'
                     } else {
                         pattern = 'IDOSA'
-                        informar.innerText = `${pattern}, ${genero} E TEM ${idade} ANOS.`
+                        informar.innerText = `VOCÊ É ${pattern}, ${genero} E TEM ${idade} ANOS`
                         imagem.src = 'https://clinicadafamiliadf.com.br/wp-content/uploads/2021/07/portrait-of-generous-kind-mature-senior-female-in-stylish-shirt-holding-hands-clasped-on-her-chest-feeling-grateful-for-great-present-on-her-birthday-elderly-woman-expressing-appreciation-1.jpg'
                     }
                 }
             }
-        }
 
+        }
     </script>
 </body>
 </html>
