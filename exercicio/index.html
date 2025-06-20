@@ -76,6 +76,8 @@
             var mensagem = window.document.getElementById('msg');
             var imagem = window.document.getElementById('image');
             var background = window.document.getElementsByTagName('body')[0];
+            var h1 = window.document.getElementsByTagName('h1')[0];
+            var p = window.document.getElementsByTagName('p')[1];
 
             var vhora = new Date();
             var hora = vhora.getHours();
@@ -99,6 +101,8 @@
                 mensagem.innerHTML = `O horário é ${hora}:${minutos}, boa madrugada!`
                 image.src = 'https://img.freepik.com/fotos-gratis/silhuetas-de-colinas-e-postes-de-luz-sob-um-ceu-nublado-durante-um-lindo-por-do-sol_181624-28611.jpg?semt=ais_hybrid&w=740'
                 background.style.background = 'black'
+                h1.style.color = 'white'
+                p.style.color = 'white'
             }
 
         }
