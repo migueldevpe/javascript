@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <h1>Criar imagem através de script</h1>
+
+    <script>
+
+        var imagem = document.createElement('img');
+
+        imagem.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC8hu7Td0n8OJZYg5-XjJ4ZS5slx9s1RI6c7XRt_UiVw51UU1EGJpP-NpF5aD4D_REmaU&usqp=CAU';
+        imagem.alt = '---';
+        imagem.width = 300;
+        imagem.height = 300;
+
+        document.body.appendChild(imagem);
+
+        var cliquei = document.getElementsByTagName('h1')[0];
+        cliquei.addEventListener('click', testando)
+        cliquei.style.marginTop = 0;
+
+        function testando() {
+            imagem.src = 'https://cdn-icons-png.flaticon.com/512/11756/11756367.png'
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exerc1</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+
+        #foto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        #foto > img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificar idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de Nascimento -
+                <input type="number" name="txtano" id="txtano" min="1900">
+            </p>
+            <input type="radio" name="sexo" id="masc" checked>
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sexo" id="fem">
+            <label for="fem">Feminino</label>
+        </div>
+        <div>
+            <input type="button" value="Verificar" onclick="verificou()">
+        </div>
+        <div id="foto">
+            <h2>-</h2>
+            <img id="imagem" src="https://i.pinimg.com/736x/fd/0a/78/fd0a7888a1165a085fabf22a1ac3fd41.jpg" alt="-">
+        </div>
+    </section>
+    <footer>
+        <p>Testado</p>
+    </footer>
+    <script>
+        function verificou() {
+            var carregarAno = new Date();
+            var ano = carregarAno.getFullYear();
+            var txtano = document.getElementById('txtano');
+            var botão = document.getElementsByTagName('input')[3];
+            var informar = document.getElementsByTagName('h2')[0];
+            var sexo = document.getElementsByName('sexo');
+            var imagem = document.getElementById('imagem');
+
+            if (txtano.value.length == 0 || Number(txtano.value) > ano) {
+                alert('[ERRO]')
+            } else {
+                var genero = '';
+                var pattern = '';
+                var idade = ano - Number(txtano.value);
+                if (sexo[0].checked) {
+                    genero = 'Homem'
+                    if (idade > 0 && idade <= 10) {
+                        pattern = 'Criança'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://apotiguar.fbitsstatic.net/img/p/letra-c-para-casa-preto-12-5cm-com-adesivo-primafer-90280/275838-1.jpg?w=800&h=800&v=no-change&qs=ignore'
+                    } else if (idade > 10 && idade < 21) {
+                        pattern = 'Jovem'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://varsatrevestimientos.com/wp-content/uploads/2023/02/J-Negra.jpg'
+                    } else if (idade > 21 && idade < 50) {
+                        pattern = 'Adulto'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://apotiguar.fbitsstatic.net/img/p/letra-a-para-casa-preto-12-5cm-com-adesivo-primafer-90275/275833-1.jpg?w=700&h=700&v=no-change'
+                    } else {
+                        pattern = 'Idoso'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://cdn.awsli.com.br/761/761999/produto/266438762d525433756.jpg'
+                    }
+                } else {
+                    genero = 'Mulher'
+                    if (idade > 0 && idade <= 10) {
+                        pattern = 'Criança'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://apotiguar.fbitsstatic.net/img/p/letra-c-para-casa-preto-12-5cm-com-adesivo-primafer-90280/275838-1.jpg?w=800&h=800&v=no-change&qs=ignore'
+                    } else if (idade > 10 && idade < 21) {
+                        pattern = 'Jovem'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://varsatrevestimientos.com/wp-content/uploads/2023/02/J-Negra.jpg'
+                    } else if (idade > 21 && idade < 50) {
+                        pattern = 'Adulta'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://apotiguar.fbitsstatic.net/img/p/letra-a-para-casa-preto-12-5cm-com-adesivo-primafer-90275/275833-1.jpg?w=700&h=700&v=no-change'
+                    } else {
+                        pattern = 'Idosa'
+                        informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
+                        imagem.src = 'https://cdn.awsli.com.br/761/761999/produto/266438762d525433756.jpg'                    
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

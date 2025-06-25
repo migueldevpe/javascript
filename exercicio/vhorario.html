@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exerc</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+        }
+
+        section > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section div > p {
+            padding: 20px;
+        }
+
+        section div > img {
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do dia</h1>
+    </header>
+    <section>
+        <div>
+            <p id="msg">O horário é </p>
+        </div>
+        <div>
+            <img id="image" src="" alt="">
+        </div>
+    </section>
+    <footer>
+        <p>Testado</p>
+    </footer>
+    <script>
+        function carregar() {
+            var cMinutos = new Date();
+            var cAtual = cMinutos.getMinutes();
+            var cHoras = new Date();
+            var hAtual = cHoras.getHours();
+
+            hAtual = hAtual < 10? '0' + hAtual : hAtual;
+            cAtual = cAtual < 10 ? '0' + cAtual : cAtual;
+
+            var mensagem = document.getElementById('msg');
+            var background = document.getElementsByTagName('body')[0];
+            var imagem = document.getElementById('image');
+
+            if (cHoras >= 6 && cHoras <= 12) {
+                mensagem.innerText = `Bom dia! A hora agora é ${hAtual}:${cAtual}.`
+                background.style.backgroundColor = 'lightblue'
+                imagem.src = 'https://www.novotempo.com/wp-content/uploads/2020/04/Amanhecer01.jpg'
+            } else if (cHoras > 12 && cHoras < 18) {
+                mensagem.innerText = `Boa tarde! A hora agora é ${hAtual}:${cAtual}.`
+                background.style.backgroundColor = 'orange'
+                imagem.src = 'https://conteudo.imguol.com.br/c/entretenimento/0f/2022/02/07/entardecer-na-serra-da-mantiqueira-sul-de-minas-gerais-1644271111729_v2_1x1.jpg'
+            } else if (cHoras >= 18 && cHoras < 24) {
+                mensagem.innertText = `Boa noite! A hora agora é ${hAtual}:${cAtual}.`
+                background.style.backgroundColor = 'blue'
+                imagem.src = 'https://i.pinimg.com/originals/53/03/a1/5303a11a5fed827cde52ef9b4ca72b04.jpg'
+            } else {
+                mensagem.innerText = `Boa madrugada! A hora agora é ${hAtual}:${cAtual}.`
+                background.style.backgroundColor = 'black'
+                background.style.color = 'white'
+                mensagem.style.color = 'black'
+                imagem.src = 'https://oeco.org.br/wp-content/uploads/oeco-migration/images/stories/mai2014/madrugada-beija-flor.jpg'
+            }
+
+        }
+    </script>
+</body>
+</html>
