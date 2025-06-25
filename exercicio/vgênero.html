@@ -97,11 +97,11 @@
             if (txtano.value.length == 0 || Number(txtano.value) > ano) {
                 alert('[ERRO]')
             } else {
-                var genero = '';
+                var gênero = '';
                 var pattern = '';
                 var idade = ano - Number(txtano.value);
                 if (sexo[0].checked) {
-                    genero = 'Homem'
+                    gênero = 'Homem'
                     if (idade > 0 && idade <= 10) {
                         pattern = 'Criança'
                         informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
@@ -120,7 +120,7 @@
                         imagem.src = 'https://cdn.awsli.com.br/761/761999/produto/266438762d525433756.jpg'
                     }
                 } else {
-                    genero = 'Mulher'
+                    gênero = 'Mulher'
                     if (idade > 0 && idade <= 10) {
                         pattern = 'Criança'
                         informar.innerText = `${pattern}, ${genero}, ${idade} anos.`
