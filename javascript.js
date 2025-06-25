@@ -45,6 +45,7 @@ if (horario >= 12 && horario < 18) {
     console.log('Bom dia!')
 } */
 
+    /*
 var horaAtual = new Date();
 var hora = horaAtual.getHours();
 
@@ -137,4 +138,28 @@ switch(dia) {
     default:
         console.log('[ERRO] Dia inválido.')
         break
-}
+}*/
+
+// var contador = 1
+
+// while (contador <= 10) {
+//     console.log(`testando ${contador}. MÉTODO WHILE`) //teste lógico no início
+//     contador++
+// }
+
+// do {
+//     console.log(`testando ${contador}. MÉTODO DO/WHILE`) //teste lógico no final
+//     contador++
+// } while (contador <= 10)
+
+var pHora = new Date();
+var hora = pHora.getHours();
+
+hora = hora < 10 ? '0' + hora : hora;
+
+var pMinutos = new Date();
+var minutos = pMinutos.getMinutes();
+
+minutos = minutos < 10 ? '0' + minutos : minutos;
+
+console.log(`${hora}:${minutos}`)
