@@ -4,8 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            padding: 5px 0px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin: 10px 0px;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Verificar idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Início -
+                <input type="number" name="inicio" id="inicio">
+            </p>
+            <p>Final -
+                <input type="number" name="final" id="final">
+            </p>
+            <p>Passo -
+                <input type="number" name="passo" id="passo" min="1">
+            </p>
+        </div>
+        <div>
+            <input type="submit" value="Verificar">
+        </div>
+        <div>
+            <p>Resultado</p>
+        </div>
+    </section>
+    <footer>
+        <p>Testado</p>
+    </footer>
+    <script>
+
+    </script>
 </body>
 </html>

@@ -138,19 +138,19 @@ switch(dia) {
     default:
         console.log('[ERRO] Dia inválido.')
         break
-}*/
+}
 
-// var contador = 1
+var contador = 1
 
-// while (contador <= 10) {
-//     console.log(`testando ${contador}. MÉTODO WHILE`) //teste lógico no início
-//     contador++
-// }
+while (contador <= 10) {
+    console.log(`testando ${contador}. MÉTODO WHILE`) //teste lógico no início
+    contador++
+}
 
-// do {
-//     console.log(`testando ${contador}. MÉTODO DO/WHILE`) //teste lógico no final
-//     contador++
-// } while (contador <= 10)
+do {
+    console.log(`testando ${contador}. MÉTODO DO/WHILE`) //teste lógico no final
+    contador++
+} while (contador <= 10)
 
 var pHora = new Date();
 var hora = pHora.getHours();
@@ -162,4 +162,27 @@ var minutos = pMinutos.getMinutes();
 
 minutos = minutos < 10 ? '0' + minutos : minutos;
 
-console.log(`${hora}:${minutos}`)
+console.log(`${hora}:${minutos}`); 
+
+for (var c = 1; c <= 10; c++) {
+    console.log(c)
+} */
+
+        var pInicio = 1;
+        var pFinal = 5;
+        var pPasso = 1;
+
+function verificou() {
+    if (Number(pPasso.value) == 0 ) {
+        alert('[ERRO] Passo não pode ser 0.');
+    } else {
+        let valorInicial = Number(pInicio.value);
+        let valorFinal = Number(pFinal.value);
+        let valorPasso = Number(pPasso.value);
+
+        for (let i = valorInicial; i <= valorFinal; i += valorPasso) {
+            console.log(i);
+        }
+    }
+}
+
