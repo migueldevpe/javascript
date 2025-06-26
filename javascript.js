@@ -166,23 +166,91 @@ console.log(`${hora}:${minutos}`);
 
 for (var c = 1; c <= 10; c++) {
     console.log(c)
-} */
+} 
 
         var pInicio = 1;
         var pFinal = 5;
         var pPasso = 1;
 
-function verificou() {
-    if (Number(pPasso.value) == 0 ) {
-        alert('[ERRO] Passo não pode ser 0.');
-    } else {
-        let valorInicial = Number(pInicio.value);
-        let valorFinal = Number(pFinal.value);
-        let valorPasso = Number(pPasso.value);
+            if (Number(pPasso.value) == 0 ) {
+                alert('[ERRO] Passo não pode ser 0.')
+            } else {
+                var valorInicial = Number(pInicio.value)
+                var valorFinal = Number(pFinal.value)
+                var valorPasso = Number(pPasso.value)
 
-        for (let i = valorInicial; i <= valorFinal; i += valorPasso) {
-            console.log(i);
-        }
+                for (var x = valorInicial; x <= valorFinal; x += valorPasso) {
+                    console.log(x);
+                }
+            } 
+
+let num = [5, 8, 4, 5, 8, 4];
+num[6] = 7;
+num.push(1);
+
+console.log(`VETOR: ${num}.`);
+console.log(`VETOR EM ORDEM: ${num.sort()}.`);
+console.log(`QUANTIDADE DE VETORES: ${num.length}.`);
+console.log(`Tem o número 4? Se sim, onde ele está? R: ${num.indexOf(4)}.`);
+
+// FORMA PADRÃO
+
+for (let pos = 0; pos < num.length; pos++) {
+    console.log(`O índice ${pos} tem o valor ${num[pos]}.`);
+}
+
+// FORMA SIMPLIFICADA
+
+for (let pos in num) {
+    console.log(`O índice ${pos} tem o valor ${num[pos]}.`);
+}1
+
+let posValor = num.indexOf(1);
+
+if (posValor == -1) {
+    console.log('Valor não encontrado.')
+} else {
+    console.log(`O valor é ${posValor}.`)
+} 
+
+*/
+
+function parImpar(n) {
+    if (n % 2 == 0) {
+        return 'Par!';
+    } else {
+        return 'Impar!';
     }
 }
 
+console.log(parImpar(4));
+
+// OU
+// let respota = parImpar(5);
+// console.log(resposta);
+
+function soma(n1=0, n2=0) { //"=0" para caso não inserir o número, não dar "NaN". Aí ficaria n1 + 0
+    return n1 + n2;
+}
+
+console.log(soma(10, 25));
+
+function fatorial(n) {
+    let fat = 1;
+    for (x = n; x > 1; x--) {
+        fat *= x;
+    }
+    return fat;
+}
+
+console.log(fatorial(5))
+
+function fatorial2(n) { //MODO RECURSIVO
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * fatorial(n-1);
+    }
+}
+
+console.log(fatorial2(5))
