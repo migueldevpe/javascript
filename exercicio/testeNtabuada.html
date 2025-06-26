@@ -67,7 +67,29 @@
         <p>Testing</p>
     </footer>
     <script>
-        
+        let númeroRecebido = document.getElementById('inicio');
+        let obterTabuada = document.getElementsByTagName('input')[1];
+        let baseTabuada = document.getElementsByTagName('select')[0];
+
+        obterTabuada.addEventListener('click', obter);
+
+        function obter() {
+            if (númeroRecebido.value.length == 0) {
+                alert('[ERRO] Insira um número.')
+            } else if (númeroRecebido.value > 10) {
+                alert('[ERRO] Limitado a tabuada de 10.')
+            } else {
+                let número = Number(númeroRecebido.value);
+                baseTabuada.innerHTML = '';
+
+                for (x = 1; x <= 10; x++) {
+                    let mostrarTabuada = document.createElement('option');
+                    mostrarTabuada.text = `${número} x ${x} = ${número*x}`;
+                    mostrarTabuada.value = `Tabuada ${x}`;
+                    baseTabuada.appendChild(mostrarTabuada);
+                }
+            }
+        }
     </script>
 </body>
 </html>

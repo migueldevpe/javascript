@@ -75,39 +75,38 @@
         <p>Testing</p>
     </footer>
     <script>
-        let vInicial = document.getElementById('inicio');
-        let vFinal = document.getElementById('final');
-        let vPasso = document.getElementById('passo');
-        let informar = document.getElementsByTagName('p')[3];
-        let confirmar = document.getElementsByTagName('input')[3];
+        let númeroInício = document.getElementById('inicio');
+        let númeroFinal = document.getElementById('final');
+        let númeroPasso = document.getElementById('passo');
+        let verificar = document.getElementsByTagName('input')[3];
+        let resultado = document.getElementsByTagName('p')[3];
 
-        confirmar.addEventListener('click', clicou);
+        verificar.addEventListener('click', verificou);
 
-        function clicou() {
-            if (vInicial.value.length == 0 || vFinal.value.length == 0 || vPasso.value.length == 0) {
-                alert('[ERRO] Preencha os dados.')
+        function verificou() {
+            if (númeroInício.value.length == 0 || númeroFinal.value.length == 0) {
+                alert('[ERRO] Informações faltando.');
             } else {
-                let valorI = Number(vInicial.value);
-                let valorF = Number(vFinal.value);
-                let valorP = Number(vPasso.value);
+                let nInício = Number(númeroInício.value);
+                let nFinal = Number(númeroFinal.value);
+                let nPasso = Number(númeroPasso.value);
 
-                informar.innerText = 'Contagem:'
+                resultado.innerHTML = 'Contagem...'
 
-                if (valorP == 0) {
-                    alert('[ERRO] Passo não pode ser 0.')
-                    valorP = 1;
-                } else if (valorF > valorI) {
-                    for (var x = valorI; x <= valorF; x += valorP) {
-                        informar.innerHTML += ` > ${x} `
+                if (númeroPasso.value.length == 0 || nPasso == 0) {
+                    alert('[ERRO] O passo não pode ser 0.')
+                    númeroPasso = 1;
+                } else if (nFinal > nInício) {
+                    for (x = nInício; x <= nFinal; x += nPasso) {
+                        resultado.innerHTML += ` ${x}`
                     }
                 } else {
-                    for (var x = valorI; x >= valorF; x -= valorP) {
-                        informar.innerHTML += ` < ${x}` 
+                    for (x = nInício; x >= nFinal; x -= nPasso) {
+                        resultado.innerHTML += ` ${x}`
                     }
                 }
 
-                informar.innerText += ' - FIM'
-
+                resultado.innerHTML += ' - FIM'
             }
         }
 
