@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: gainsboro;
+            height: 100vh;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            padding: 5px 0px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: auto;
+            width: 500px;
+            background-color: azure;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        footer > p {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Testing</h1>
+    </header>
+    <section>
+        <div>
+            <p>Número entre 1 e 100 -
+                <input type="number" name="numbers" id="numbers" required>
+                <input type="submit" value="Adicionar">
+            </p>
+        </div>
+        <div>
+            <select name="numbers" id="shownum" size="10"></select>
+            <br>
+            <input type="submit" value="Finalizar">
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>Testing</p>
+    </footer>
+    <script>
+        let inserirNúmeros = document.getElementById('numbers');
+        let adicionarNúmeros = document.getElementsByTagName('input')[1];
+        let lista = document.querySelector('select#shownum');
+        let resposta = document.getElementById('res');
+        let valores = []
+
+        adicionarNúmeros.addEventListener('click', adicionou);
+
+        function isNumero(n) {
+            if (Number(inserirNúmeros.value) >= 1 && Number(n) <= 100) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        function inLista(n, l) {
+            if (l.indexOf(Number(inserirNúmeros)) != -1) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        function adicionou() {
+            if (isNumero(inserirNúmeros.value) && !inLista(inserirNúmeros.value, valores)) {
+                
+            } else {
+                alert('[ERRO] Número inválido ou canal vazio.')
+            }
+        }
+    </script>
+</body>
+</html>

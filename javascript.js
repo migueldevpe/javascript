@@ -213,7 +213,7 @@ if (posValor == -1) {
     console.log(`O valor é ${posValor}.`)
 } 
 
-*/
+*/ /*
 
 function parImpar(n) {
     if (n % 2 == 0) {
@@ -237,20 +237,20 @@ console.log(soma(10, 25));
 
 function fatorial(n) {
     let fat = 1;
-    for (x = n; x > 1; x--) {
+    for (let x = n; x > 1; x--) {
         fat *= x;
     }
     return fat;
 }
 
-console.log(fatorial(5))
+console.log(fatorial(5));
 
-function fatorial2(n) { //MODO RECURSIVO
-    if (n == 1) {
+function rFatorial(n) {
+    if (n == 0) {
         return 1;
     } else {
-        return n * fatorial(n-1);
+        return n * rFatorial(n-1);
     }
 }
 
-console.log(fatorial2(5))
+console.log(rFatorial(5)); */
