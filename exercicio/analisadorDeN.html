@@ -46,6 +46,10 @@
         h2 {
             margin: 10px 0px;
         }
+
+        #snum {
+            width: 150px;
+        }
     </style>
 </head>
 <body>
@@ -60,7 +64,7 @@
             </p>
         </div>
         <div>
-            <select name="numbers" id="shownum" size="10"></select>
+            <select name="numbers" id="snum" size="6"></select>
             <br>
             <input type="submit" value="Finalizar">
         </div>
@@ -74,11 +78,13 @@
     <script>
         let inserirNúmeros = document.getElementById('numbers');
         let adicionarNúmeros = document.getElementsByTagName('input')[1];
-        let lista = document.querySelector('select#shownum');
+        let finalizar = document.getElementsByTagName('input')[2];
+        let lista = document.getElementById('snum');
         let resposta = document.getElementById('res');
         let valores = []
 
         adicionarNúmeros.addEventListener('click', adicionou);
+        finalizar.addEventListener('click', finalizou);
 
         function isNumero(n) {
             if (Number(inserirNúmeros.value) >= 1 && Number(n) <= 100) {
@@ -89,7 +95,7 @@
         }
 
         function inLista(n, l) {
-            if (l.indexOf(Number(inserirNúmeros)) != -1) {
+            if (l.indexOf(Number(n)) != -1) {
                 return true
             } else {
                 return false
@@ -98,9 +104,44 @@
 
         function adicionou() {
             if (isNumero(inserirNúmeros.value) && !inLista(inserirNúmeros.value, valores)) {
-                
+                valores.push(Number(inserirNúmeros.value));
+                let item = document.createElement('option')
+                item.text = `Valor ${inserirNúmeros.value} adicionado.`
+                lista.appendChild(item)
             } else {
                 alert('[ERRO] Número inválido ou canal vazio.')
+            }
+            inserirNúmeros.value = ''
+            inserirNúmeros.focus()
+        }
+
+        function finalizou() {
+            if (valores.length == 0) {
+                alert('[ERRO] Adicione valores antes de finalizar')
+            } else {
+                let total = valores.length;
+                let maior = valores[0];
+                let menor = valores[0];
+                let soma = 0;
+                let média = 0;
+
+                for (pos in valores) {
+                    soma += valores[pos]
+                    if (valores[pos] > maior) {
+                        maior = valores[pos]
+                    } else if (valores[pos] < menor) {
+                        menor = valores[pos]
+                    }
+                }
+
+                média = soma / total
+
+                res.innerHTML = ''
+                res.innerHTML += `<p>Ao todo, temos ${total} números cadastrados.</p>`
+                res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
+                res.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`
+                res.innerHTML += `<p>A soma de todos é ${soma}.</p>`
+                res.innerHTML += `<p>A média é ${média}.</p>`
             }
         }
     </script>
