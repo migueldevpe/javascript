@@ -254,3 +254,14 @@ function rFatorial(n) {
 }
 
 console.log(rFatorial(5)); */
+
+let array = [1, 2, 3]
+
+const object = {nome: 'MIGUEL', idade: 19, peso: 70.0, engordar(p=0){
+    console.log('Engordou')
+    this.peso += p;
+}}
+
+
+object.engordar(2)
+console.log(`O ${object.nome} engordou ${object.peso}kg.`)
